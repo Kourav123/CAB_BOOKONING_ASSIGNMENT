@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Fare Calculation</title>
+<link th:href="@{css/fare.css}" rel="stylesheet">
+
+</head>
+<body>
+
+	<h2>Fare Calculation</h2>
+
+	<form th:action="@{/fare}" method="post">
+		<label for="distance">Distance (in km):</label> <input type="number"
+			id="distance" name="distance" required><br>
+
+		<button type="submit">Calculate Fare</button>
+		<a th:href="@{/}" th:text="RETURN_HOME_PAGE"></a>
+
+	</form>
+
+	<p th:text="'Fare: ' + ${fare}"></p>
+
+
+
+</body>
+</html>
